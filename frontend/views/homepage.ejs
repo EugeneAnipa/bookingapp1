@@ -1,0 +1,121 @@
+<%- include('header'); -%>
+
+<main><div class="container-fluid">
+        
+    <form class="homepageform text-center" action="/" method="post">
+        <h2>Book Us</h2>
+        
+        <div>
+           
+        <label for="name">
+            
+            <span>name</span>
+       <input name="name" type="text" required placeholder="fullname">
+
+        </label>
+    </div>
+    <div>  
+        
+        <label for="email">
+            <span>email</span>
+            <input name="email" required type="email" placeholder="email">
+        </label>
+        <div> 
+        
+        <label for="phonenumber">
+            <span>Phone</span>
+            <input type="tel" placeholder="phone number" name="phonenumber" required>
+        </label>
+       
+        </div>
+        <div>
+            
+        <label for="appointmenttype">
+            <span>Appointment Type</span>
+            <select name="appointmenttype" id="appointmenttype"  required>
+                <!--    
+                
+                     <option >Glamnails</option>
+                <option >Your Address</option>          
+                
+                -->
+                <option value="Glamnails">Glamnails</option>
+                <option value="YourPlace">Your Address</option>
+                
+               
+
+                
+                
+                
+                
+            </select>
+
+        </label>
+    </div>
+    <div> 
+        
+        <label for="address">
+            <span>Address</span>
+            <!--write code here,if glam nails, then the address should input glam address from placeholder that will be no edit-->
+           <input name="address" id="address" type="text" placeholder="address"  required>
+        </label>
+    </div>
+    <div> 
+       
+        <label>
+            <span>Select date</span>
+            <input class="date" type="date" name="date" required>
+        </label>
+
+
+    </div>
+
+    <div> 
+       
+        <label>
+            <span>Select time</span>
+            <input class="time" type="time" name="time" required>
+        </label>
+    </div>
+
+
+    <div> 
+<button type="submit">Submit</button>
+
+</div>
+      
+
+
+    </form>
+</div></main>
+<script>
+
+   
+   /*try this attempt of removing element and adding and see how it will turn out             */
+      
+
+    const apptype = document.getElementById('appointmenttype').value;
+   const add = document.getElementById('address');
+
+   
+
+    
+        
+    if(apptype==='Glamnails'){
+          
+        add.setAttribute("value","Glamms address");
+        add.setAttribute("placeholder","GlamsAddress");
+        add.setAttribute("readonly",true);
+        
+         
+    }else if(apptype==='Your Address'){
+        add.setAttribute("placeholder","enter your address");
+
+    }
+
+
+
+</script>
+
+
+<%- include('footer'); -%>

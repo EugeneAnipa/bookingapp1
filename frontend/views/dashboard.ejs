@@ -1,0 +1,123 @@
+
+<%- include('header'); -%>
+
+
+
+
+<main>
+    <div class="container">
+        
+        <div>
+            <a href="/pollreset" style="text-decoration:none">
+            <span class="z-n1 position-relative notibell">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#F9629F"
+                >
+                  <path
+                    d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160ZM480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="z-0 position-relative notinum"
+                hx-get="/poll"
+                hx-trigger="every 10s"
+                style="width: 5px; height: 5px"
+              ></span>
+
+            </a>
+        </div>
+        <!-- 
+        <div id="this" hx-swap="outerHTML">
+        <h2 class="text-center">Bookings</h2>
+
+       
+        </div>
+        -->
+        <hr style="border:solid 5px #f962f9;">
+   <!--test-->
+   <div id="this" class="container"  > 
+
+   <table class="table">
+    
+    <thead> 
+      <tr> 
+
+
+
+  <th scope="col">Name</th>
+  <th scope="col">Email</th>
+  <th scope="col">Mobile</th>
+  <th scope="col">Address</th>
+  <th scope="col">Date</th>
+  <th scope="col">Time</th>
+
+      </tr>
+
+
+
+
+    </thead>
+    <tbody> 
+      <% for (var i=0;i< locals.bookingInfo.length;i++){ %>
+        <tr> 
+        
+      
+
+        <td > <a hx-target="#this"   hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >     <%= locals.bookingInfo[i].fullName %> </a> </td>
+        <td ><a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  > <%= locals.bookingInfo[i].email %></a> </td>
+        <td ><a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >  <%= locals.bookingInfo[i].phoneNumber %></a> </td>
+        <td ><a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  > <%= locals.bookingInfo[i].appointmentAddress %></a> </td>
+        <td ><a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >  <%= locals.bookingInfo[i].appointmentDate %> </a></td>
+        <td > <a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >  <%= locals.bookingInfo[i].appointmentTime %></a></td>
+     
+      </tr>
+     
+      <%}%>     
+    </tbody>
+
+
+
+   </table>
+   <style>
+    th{
+     background-color: #f9629f !important;
+   font-size: 14px;
+   text-transform: uppercase;
+   letter-spacing: 0.03em;
+    }
+
+  tr{
+
+   background-color: #ffffff !;
+   box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1) !important;
+
+   td{ 
+
+  
+   margin-top: 5px !important;
+
+ }
+ }
+  
+
+ table tbody td a{
+   text-decoration: none;
+   color: black;
+ }
+</style>
+
+  </div>
+
+   <!--test-->
+    </div>
+   
+</main>
+
+
+
+<%- include('footer'); -%>

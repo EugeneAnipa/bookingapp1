@@ -1,0 +1,301 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+  --base-color:linear-gradient(green,pink);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato","Poppins",Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+
+
+
+
+.adminloginmain{
+    margin-top: 20vh;
+    color: #F9629F;
+    background-color: rgb(31, 45, 31);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+header,main,section, footer,
+article {
+  container: inline-size;
+}
+
+
+
+.socials-container{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.socials-container a{
+  background-color: white;
+  padding: 1em;
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+.socials-container a svg{
+  height: 32px;
+}
+.socials-container a::before{
+  content: attr(data-social);
+  position: absolute;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-30px) rotate(25deg);
+  opacity: 0;
+  transition: 200ms cubic-bezier(.42,0,.44,1.68);
+}
+.socials-container a:hover{
+  background-color: var(--accent-color);
+  fill: white;
+}
+.socials-container a::after{
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--accent-color);
+  transform: translateY(0) rotate(25deg);
+  opacity: 0;
+  transition: 200ms cubic-bezier(.42,0,.44,1.68);
+}
+.socials-container a:hover::before{
+  transform: translateY(-65px) rotate(0);
+  opacity: 1;
+}
+.socials-container a:hover::after{
+  transform: translateY(-42px) rotate(0);
+  opacity: 1;
+}
+        
+
+
+
+            footer {
+              
+  
+  bottom: 0;
+}
+
+.navbar-brand{
+  color: pink;
+  font-weight:bolder;
+  font-size: larger;
+  
+}
+.nav-link{
+  color: pink !important;
+  font-weight:bolder;
+  font-size: large;
+
+}
+.navbar-toggler{
+  border-color: pink !important;
+}
+
+nav div .navbar-brand::before , nav div .nav-link::before{
+  content: '';
+  top:0;
+  left: 1;
+  background: linear-gradient(45deg,#F9629F,#101010) !important;
+  border-radius: 1.5em;
+  position: absolute;
+  width: 58px;
+  height: 14px;
+  z-index: -2;
+  filter: blur(5px);
+
+  
+}
+nav div .navbar-brand::after, nav div .nav-link::after{
+  content: '';
+  bottom:0;
+  left: 0;
+  background: linear-gradient(45deg,#F9629F,#0a0a0a) !important;
+  border-radius: 1.5em;
+  position: absolute;
+  width: 58px;
+  height: 14px;
+  z-index: -2;
+  filter: blur(5px);
+  
+
+}
+
+nav div a:hover{
+  font-size: larger;
+  transition: 2.0s;
+  transform: scale(0) translateY(-20vh);
+}
+
+.navbar-toggler-icon{
+  background-color: pink;
+
+}
+@media screen and (min-width:990px){
+  .navbar-nav{
+    margin-left: 38%;
+
+  }
+}
+
+.homepageform svg{
+  margin: 0;
+}
+main{
+  place-items: center;
+  height: 100vh;
+}
+
+.homepageform{
+  
+  margin: auto;
+  background-color: #fff;
+ color: #333;
+ box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.9);
+ border-radius: 15px;
+ padding: 20px;
+       
+width: 100%;
+max-width: 400px;
+margin-top: 10vh;
+}
+
+.homepageform h2{
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #F9629F;
+}
+
+.homepageform label{
+  display: flex;
+  color:#F9629F;
+  margin: 10px;
+}
+
+.homepageform input{
+
+  width: 75%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        margin-left: 0.5em;
+}
+
+.homepageform input:focus{
+  outline: none;
+  border-color: #F9629F;
+}
+
+
+.homepageform button{
+  margin-top: 20px;
+        width: 50%;
+        border: none;
+        outline: none;
+        background: linear-gradient(#F9629F, #fff);
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        padding: 10px;
+        font-size: 18px;
+        box-shadow: 0px 4px #555;
+        border-radius: 25px;
+        transition: all 1s;
+        overflow: hidden;
+
+}
+
+ 
+.homepageform button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F9629F;
+  transition: all 1s;
+  z-index: -1;
+  transform: translateX(-100%);
+
+}
+  
+
+.homepageform button:hover::before{
+  transform: translateY(0);
+}
+
+
+/* the hover below makes the effect, but the one above tries to hover the main element ,thus before the form*/
+
+.homepageform :hover{
+  transform: translateY(0);
+}
+
+
+
+
+.homepageform button:hover{
+  background-color: #F9629F;
+}
+
+
+.date,.time{
+color: #F9629F;
+
+
+}
+
+
+table{
+  padding: 5px solid pink;
+  margin: 15px 15px 15px 15px;
+}
+
+.notinum{
+  color: #F9629F;
+}
+
+
+.logout{
+  float: right;
+}
