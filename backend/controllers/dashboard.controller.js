@@ -22,12 +22,12 @@ console.log("welcome")
 //res.send("Admin page logged in success")
 
 const displayBookings = await databaseModels.bookingInfosDB.findAll();
-
+   /*
 const [result] = await databaseModels.mysql2.query(
     "SELECT * FROM `bookingInfos`;"
 
 );
-
+*/
 for (let a = 0; a < displayBookings.length; a++) {
     console.log(displayBookings[a].fullName);
     
