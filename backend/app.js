@@ -15,6 +15,11 @@ import { MemoryStore } from "express-session";
 import passport from "passport";
 import nocache from "nocache";
 import path from "path";
+import connect from "connect";
+import SequelizeStore from "connect-session-sequelize";
+
+
+
 
 
 
@@ -38,6 +43,25 @@ var accessLogStream = fs.createWriteStream((__dirname, "access.log"), {
   app.use(morgan("combined", { stream: accessLogStream }));
   
 
+  /* connect session */
+/*
+  connect().use(
+    connect.session({
+      store: new SequelizeStore({
+        checkPeriod:500 * 60 * 60,
+      }
+      ),
+      secret:process.env.SESSIONSECRET,
+    })
+  )
+
+  
+*/
+  /* connect session */
+
+
+
+
 //session
 //Session
 app.use(
@@ -45,9 +69,12 @@ app.use(
     secret: process.env.SESSIONSECRET,
     resave: false,
     saveUninitialized: false,
-    store: new MemoryStore({
+    /*
+    store: new SequelizeStore({
       checkPeriod:500 * 60 * 60,
+      
     }),
+    */
     cookie: {
       maxAge: 500 * 60 * 60,
     },
@@ -79,6 +106,7 @@ wss.on("message",function message(data){
 import { homepageRouter } from "./routes/homepage.routes.js";
 import { adminRouter } from "./routes/adminpage.routes.js";
 import { dashRouter } from "./routes/dashboard.routes.js";
+import { Sequelize } from "sequelize";
 
 
 app.use("/",homepageRouter);
