@@ -163,11 +163,11 @@ const adminLoginpageGet = async function(req,res,next){
         //adminlogin page here
      //console.log(req.flash());
 
-
+     
 
     console.log(req.method);
 
-    res.render("adminlogin");
+    res.render("adminlogin",{ error: req.flash() });
     }catch(err){
     console.log(err);
 

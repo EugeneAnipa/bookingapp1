@@ -15,6 +15,7 @@ import { MemoryStore } from "express-session";
 import passport from "passport";
 import nocache from "nocache";
 import path from "path";
+import flash from "connect-flash";
 import connect from "connect";
 import SequelizeStore from "connect-session-sequelize";
 
@@ -84,7 +85,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(nocache());
-
+app.use(flash());
 /*      websocket   */
 /*
 const wss = new WebSocketServer({port:8080});

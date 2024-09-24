@@ -18,7 +18,7 @@ const studentMgtDB = await mysql.createConnection({
 
 /*   mysql2     */
 
-const sequelizeConnect = new Sequelize("bookingapp","root","",{host:"localhost",
+const sequelizeConnect = new Sequelize(process.env.SEQUELIZEDATABASE,process.env.SEQUELIZEUSER,process.env.SEQUELIZEPASSWORD,{host:process.env.SEQUELIZEHOST,
   dialect:"mysql"
 })
 
