@@ -5,12 +5,15 @@ import mysql from 'mysql2/promise';
 
 /*   mysql2     */
 
+/*
 const studentMgtDB = await mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "bookingapp",
   password: "",
 });
+
+*/
 
 
 /*   mysql2     */
