@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 
 import session from "express-session";
+import { MemoryStore } from "express-session";
 import passport from "passport";
 import nocache from "nocache";
 import path from "path";
@@ -42,8 +43,11 @@ var accessLogStream = fs.createWriteStream((__dirname, "access.log"), {
 app.use(
   session({
     secret: process.env.SESSIONSECRET,
-    resave: true,
-    saveUninitialized: false,
+    resave: false,
+    //saveUninitialized: false,
+    store: new MemoryStore({
+      checkPeriod:500 * 60 * 60,
+    }),
     cookie: {
       maxAge: 500 * 60 * 60,
     },
