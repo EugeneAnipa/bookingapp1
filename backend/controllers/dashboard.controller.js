@@ -163,6 +163,19 @@ console.log(oneBookInfo.email);
   
   
   }
+
+  .coltest{
+  display:flex;
+  padding:10px 0;
+
+  &:before{
+  color:#F9629F;
+  padding-right:10px;
+  content:attr(data-label);
+  flex-basis:50%
+  text-align:right;
+  }
+  }
   </style>
   <div    class="container-fluid" hx-swap="outerHTML"  >
     
@@ -170,18 +183,18 @@ console.log(oneBookInfo.email);
   
   <div class="align-items-center text-center" >
   <h3 class="text-center" >Booking Info</h3> <br>
-  <label><span>${oneBookInfo.fullName} </span></label> <br>
-  <label><span>   ${oneBookInfo.email}</span></label> <br>
-  <label><span>  ${oneBookInfo.phoneNumber}</span></label> <br>
+  <label><span class="coltest" data-label="Name" > ${oneBookInfo.fullName} </span></label> <br>
+  <label><span class="coltest" data-label="Email" >   ${oneBookInfo.email}</span></label> <br>
+  <label><span class="coltest" data-label="Mobile" >  ${oneBookInfo.phoneNumber}</span></label> <br>
   
 
 
 
-   <label><span> ${oneBookInfo.appointmentType}</span></label> <br>
-  <label><span> ${oneBookInfo.appointmentAddress}</span></label> <br>
-  <label><span> ${oneBookInfo.appointmentDate}</span></label> <br>
-  <label><span>  ${oneBookInfo.appointmentTime}</span></label> <br>
-  <label><span>  ${oneBookInfo.timeAndDateBooked}</span></label> <br>
+   <label><span class="coltest" data-label="Type" > ${oneBookInfo.appointmentType}</span></label> <br>
+  <label><span class="coltest" data-label="Address" > ${oneBookInfo.appointmentAddress}</span></label> <br>
+  <label><span class="coltest" data-label="Date" > ${oneBookInfo.appointmentDate}</span></label> <br>
+  <label><span class="coltest" data-label="Time" >  ${oneBookInfo.appointmentTime}</span></label> <br>
+  <label><span class="coltest" data-label="Date Booked" >  ${oneBookInfo.timeAndDateBooked}</span></label> <br>
   
   
   
