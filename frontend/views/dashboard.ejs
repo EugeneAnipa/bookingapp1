@@ -48,7 +48,7 @@
       <tr> 
 
 
-
+        <th scope="col">#</th>
   <th scope="col">Name</th>
   <th scope="col">Email</th>
   <th scope="col">Mobile</th>
@@ -67,7 +67,7 @@
         <tr> 
         
       
-
+          <td > <a hx-target="#this"   hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >      </a> </td>
         <td > <a hx-target="#this"   hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >     <%= locals.bookingInfo[i].fullName %> </a> </td>
         <td ><a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  > <%= locals.bookingInfo[i].email %></a> </td>
         <td ><a hx-target="#this" hx-post="/dashboard/onebooking/<%= locals.bookingInfo[i].id %>" value="<%= locals.bookingInfo[i].id %>"  >  <%= locals.bookingInfo[i].phoneNumber %></a> </td>
@@ -84,6 +84,21 @@
 
    </table>
    <style>
+  tbody{
+    counter-reset: counter;
+  }
+   
+  tr > td:first-child ::before {
+   
+     
+    
+    content: counter(counter,decimal-leading-zero);
+    counter-increment: counter;
+
+   }
+
+
+
     th{
      background-color: #f9629f !important;
    font-size: 14px;
@@ -92,7 +107,7 @@
     }
 
   tr{
-
+    
    background-color: #ffffff !;
    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1) !important;
 
