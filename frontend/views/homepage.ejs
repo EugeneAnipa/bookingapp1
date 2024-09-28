@@ -2,7 +2,7 @@
 
 <main><div class="container-fluid">
         
-    <form class="homepageform text-center" action="/" method="post">
+    <form class="homepageform text-center" action="/" method="post"   >
         <h2>Book Us</h2>
         
         <div>
@@ -32,15 +32,23 @@
             
         <label for="appointmenttype">
             <span>Appointment Type</span>
-            <select name="appointmenttype" id="appointmenttype"  required>
+            <select name="appointmenttype" id="appointmenttype" onchange="testChange()"  required  >
                 <!--    
                 
                      <option >Glamnails</option>
                 <option >Your Address</option>          
                 
                 -->
+
+
                 <option value="Glamnails">Glamnails</option>
+
                 <option value="YourPlace">Your Address</option>
+                
+                
+                
+               
+                
                 
                
 
@@ -57,6 +65,7 @@
         <label for="address">
             <span>Address</span>
             <!--write code here,if glam nails, then the address should input glam address from placeholder that will be no edit-->
+            <!--  -->
            <input name="address" id="address" type="text" placeholder="address"  required>
         </label>
     </div>
@@ -88,30 +97,74 @@
 
     </form>
 </div></main>
-<script>
+<script defer>
+
+    /*    testing idea */
+
+   
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    /*  testing idea */
+
 
    
    /*try this attempt of removing element and adding and see how it will turn out             */
-      
+     
+    let apptype = document.getElementById('appointmenttype');
 
-    const apptype = document.getElementById('appointmenttype').value;
-   const add = document.getElementById('address');
+    apptype.addEventListener("change",testChange);
+   
+   function testChange(event){ 
+
+    console.log('target',event.target);
+    console.log('currentTarget',event.currentTarget);
+    console.log('target value',event.target.value);
+    console.log('currentTarget value',event.currentTarget.value);
+
+   let add = document.getElementById('address');
+
+ 
 
    
-
-    
         
-    if(apptype==='Glamnails'){
+    if(event.currentTarget.value==='Glamnails'){
           
         add.setAttribute("value","Glamms address");
         add.setAttribute("placeholder","GlamsAddress");
         add.setAttribute("readonly",true);
         
          
-    }else if(apptype==='Your Address'){
+    }else if(event.currentTarget.value==='YourPlace'){
+        add.removeAttribute("value");
+        add.removeAttribute("placeholder");
+        add.removeAttribute("readonly");
         add.setAttribute("placeholder","enter your address");
 
+    }else{
+    
+
+
     }
+
+}
+
+//
+
 
 
 
