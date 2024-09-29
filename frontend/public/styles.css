@@ -221,11 +221,11 @@ margin-top: 10vh;
 
 .homepageform input:focus{
   outline: none;
-  border-color: #F9629F;
+  border-color: #F9629F; 
 }
 
 
-.homepageform button{
+ .homepageform  button{
   margin-top: 20px;
         width: 50%;
         border: none;
@@ -245,14 +245,14 @@ margin-top: 10vh;
 }
 
  
-.homepageform button::before{
+ .homepageform  button::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #F9629F;
+  background-color:#F9629F;
   transition: all 1s;
   z-index: -1;
   transform: translateX(-100%);
@@ -267,9 +267,12 @@ margin-top: 10vh;
 
 /* the hover below makes the effect, but the one above tries to hover the main element ,thus before the form*/
 
+/*
 .homepageform :hover{
   transform: translateY(0);
 }
+
+*/
 
 
 
