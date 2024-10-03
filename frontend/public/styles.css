@@ -55,8 +55,8 @@ article {
   background-color: white;
   padding: 1em;
   border-radius: 50%;
-  height: 64px;
-  width: 64px;
+  height: 44px;
+  width: 44px;
   box-sizing: border-box;
   flex-shrink: 0;
   display: grid;
@@ -64,7 +64,7 @@ article {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
 .socials-container a svg{
-  height: 32px;
+  height: 28px;
 }
 .socials-container a::before{
   content: attr(data-social);
@@ -111,6 +111,10 @@ article {
               
   
   bottom: 0;
+}
+
+nav{
+  margin-top: 2px;
 }
 
 .navbar-brand{
