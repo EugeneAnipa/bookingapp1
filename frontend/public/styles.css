@@ -55,16 +55,18 @@ article {
   background-color: white;
   padding: 1em;
   border-radius: 50%;
-  height: 44px;
-  width: 44px;
+  height: 64px;
+  width: 64px;
   box-sizing: border-box;
   flex-shrink: 0;
   display: grid;
   place-items: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+ 
 }
 .socials-container a svg{
   height: 28px;
+  
 }
 .socials-container a::before{
   content: attr(data-social);
@@ -257,15 +259,15 @@ margin-top: 10vh;
   width: 100%;
   height: 100%;
   background-color:#F9629F;
-  transition: all 1s;
+  transition: all 2s;
   z-index: -1;
-  transform: translateX(-100%);
+  transform: translateX(-100%) ;
 
 }
   
 
 .homepageform button:hover::before{
-  transform: translateY(0);
+  transform: translateY(0) ;
 }
 
 
@@ -276,8 +278,8 @@ margin-top: 10vh;
   transform: translateY(0);
 }
 
-*/
 
+*/
 
 
 
