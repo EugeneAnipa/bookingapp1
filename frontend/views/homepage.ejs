@@ -1,8 +1,84 @@
 <%- include('header'); -%>
+<style>
+     .mainImageCover{
+        position: absolute;
+            width: 100%;
+            opacity: .15;
+            overflow: hidden;
+            z-index: -1;
+          
+           
+        }
 
+
+        .littleImage1{
+            z-index:-2 ;
+            opacity: .4;
+            overflow: hidden;
+            max-width: 45vh;
+  max-height: 50vh;
+  animation: myfirst 5s 2;
+  animation-direction: alternate;
+  
+
+        }
+
+        .littleImage2{
+            z-index:-4 ;
+            opacity: .4;
+            overflow: hidden;
+            max-width: 45vh;
+  max-height: 50vh;
+  /*
+  animation: myfirst 5s 2;
+  animation-direction: alternate infinite;
+ */
+
+ transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(25vh) translateY(-8vh) ;
+
+  
+}
+
+
+@keyframes myfirst {
+/*
+    0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(0%) translateY(16vh) ;
+  }
+    */
+
+
+    
+    
+    
+}
+
+
+        form{
+           position: relative;
+        }
+</style>
 <main><div class="container-fluid">
+        <div class="horizontal-scroll">
+            <div class="image-wrapper">
+                <img  class="mainImageCover" src="https://images.unsplash.com/photo-1658492055212-e1acbccfca5a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG5haWwlMjBzYWxvbnxlbnwwfHwwfHx8MA%3D%3D">
+    
+    
+                <img class="littleImage1" src="https://media.istockphoto.com/id/1459237604/photo/manicurist-applying-acrylic-on-nails.jpg?s=1024x1024&w=is&k=20&c=S5PBpSh3amecun8qDm_AAu9BDxhAG3myMi3CgdfqJyc=">
+            
         
+
+        
+                <img class="littleImage2" src="https://media.istockphoto.com/id/1085445878/photo/cosmetics-hands-nails-manicure-paint-brushes-red.jpg?s=1024x1024&w=is&k=20&c=1B_p3Ds5b5MYe8ZaE6jtYzItCFYWbg3EHRQJf0vz-I4=">
+                
+           
     <form class="homepageform text-center" action="/" method="post" id="book"  >
+       
+        
         <h2>Book Us</h2>
         
         <div>
@@ -96,7 +172,14 @@
 
 
     </form>
-</div></main>
+</div>
+<!--   -->
+</div> 
+</div>
+<!--   -->
+
+
+</main>
 <script defer>
 
     /*    testing idea */

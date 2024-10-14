@@ -185,6 +185,7 @@ nav div a:hover{
   margin: 0;
 }
 main{
+  
   place-items: center;
   height: 100vh;
 }
