@@ -15,10 +15,20 @@ const mysql2 = await mysql.createConnection({
 
 */
 /*   mysql2     */
+/*
 const sequelizeConnect = new Sequelize(process.env.SEQUELIZEDATABASE,process.env.SEQUELIZEUSER,process.env.SEQUELIZEPASSWORD,{host:process.env.SEQUELIZEHOST,
   dialect:"mysql",
   port:2405,
 })
+*/
+/* local host  database */
+
+const sequelizeConnect = new Sequelize("bookingapp", "root","",{host:"localhost",
+  dialect:"mysql",
+ /* port:2405, */
+})
+
+
 
 
 /*   mysql2     */
@@ -132,7 +142,7 @@ const bookingInfosDB = sequelizeConnect.define("bookingInfo",{
 
   const databaseModels = {
 
-    adminLoginsDB,bookingInfosDB,/* mysql2 , */notiDB
+    adminLoginsDB,bookingInfosDB,/* mysql2 , */ notiDB
 
   }
   export {databaseModels} ;

@@ -107,12 +107,14 @@ wss.on("message",function message(data){
 import { homepageRouter } from "./routes/homepage.routes.js";
 import { adminRouter } from "./routes/adminpage.routes.js";
 import { dashRouter } from "./routes/dashboard.routes.js";
+import { maintenanceHookRouter } from "./routes/maintenanceHook.routes.js";
 import { Sequelize } from "sequelize";
 
 
 app.use("/",homepageRouter);
 app.use("/admin",adminRouter);
 app.use("/dashboard",dashRouter);
+app.use("/hook",maintenanceHookRouter)
 //console.log(homepageRouter);
 
 
@@ -129,7 +131,18 @@ app.use("/dashboard",dashRouter);
 //initialize the websocket
 
 
+/* 
+
+
+
+app.listen(22, () => {
+  console.log("server is running on 8000");
+});
+
+*/
 
 app.listen(8000, () => {
     console.log("server is running on 8000");
   });
+
+
